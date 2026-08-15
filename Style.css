@@ -1,0 +1,217 @@
+/* Configurações Gerais e Cores */
+:root {
+    --bg-dark: #0f1115;
+    --bg-card: #181c24;
+    --text-main: #ffffff;
+    --text-muted: #8a94a6;
+    --neon-yellow: #dfff00;
+    --neon-green: #39ff14;
+    --border-color: #242b35;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Estrutura do Layout */
+.container {
+    display: flex;
+    width: 100%;
+}
+
+/* Barra Lateral (Sidebar) */
+.sidebar {
+    width: 260px;
+    background-color: var(--bg-card);
+    border-right: 1px solid var(--border-color);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo h2 {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--neon-yellow);
+}
+
+.menu {
+    margin-top: -150px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu a {
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 12px 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.menu a:hover, .menu a.active {
+    background-color: rgba(223, 255, 0, 0.1);
+    color: var(--neon-yellow);
+}
+
+.gym-badge {
+    background-color: var(--bg-dark);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.gym-badge p {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.status-online {
+    color: var(--neon-green);
+    font-size: 0.8rem;
+}
+
+/* Conteúdo Principal */
+.main-content {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.main-header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.main-header p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+/* Grid de Cartões (Métricas) */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.card-icon {
+    font-size: 2rem;
+    color: var(--neon-yellow);
+}
+
+.card-info h3 {
+    font-size: 1.6rem;
+    margin-bottom: 2px;
+}
+
+.card-info p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Monitor de Chat */
+.chat-monitor {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.chat-monitor h2 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.chat-log-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.log-item {
+    background-color: var(--bg-dark);
+    padding: 15px 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--neon-yellow);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    font-size: 0.95rem;
+}
+
+.time {
+    color: var(--text-muted);
+    font-weight: bold;
+}
+
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.badge-success {
+    background-color: rgba(57, 255, 20, 0.1);
+    color: var(--neon-green);
+}
+
+.badge-booking {
+    background-color: rgba(223, 255, 0, 0.1);
+    color: var(--neon-yellow);
+}
+
+/* Responsividade Básica para Telemóveis */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .menu {
+        margin-top: 20px;
+    }
+    .main-content {
+        padding: 20px;
+    }
+    .log-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
